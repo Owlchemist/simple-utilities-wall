@@ -26,8 +26,14 @@ namespace WallUtilities
 			else loc2.x--;
 				
 			//try to determine if this is a wall. There isn't a wall type so we check for some assumed values.
-			Building building2 = map.thingGrid.ThingAt<Building>(loc2);
-			if (building2 != null && (building2.def.fillPercent == 1f || building2.def.passability == Traversability.Impassable || building2.def.blockLight == true)) return true;
+			IEnumerable<Thing> building2 = map.thingGrid.ThingsAt(loc2);
+			foreach (Thing thinghere in building2)
+			{
+				if (thinghere?.def.thingClass == typeof(Building))
+				{
+					if (thinghere != null && (thinghere.def.fillPercent == 1f || thinghere.def.passability == Traversability.Impassable || thinghere.def.blockLight == true)) return true;
+				}
+			}
 
 			return new AcceptanceReport("Must be placed next to wall.");
 		}
