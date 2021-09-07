@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WallUtilities
 {
-	public class WorkPlace_OnlyNextToWall : PlaceWorker
+	public class WorkPlacer_OnlyNextToWall : PlaceWorker
 	{
 		public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)
 		{
@@ -41,7 +41,7 @@ namespace WallUtilities
 			GenDraw.DrawFieldEdges(new List<IntVec3>{center}, GenTemperature.ColorSpotHot, null);
 		}
 
-		public WorkPlace_OnlyNextToWall()
+		public WorkPlacer_OnlyNextToWall()
 		{
 		}
 	}
