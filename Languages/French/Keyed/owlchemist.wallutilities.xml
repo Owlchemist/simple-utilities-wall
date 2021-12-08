@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WallUtilities.Report.NoRoof>L'espace devant le chauffage doit être sous un toit.</WallUtilities.Report.NoRoof>
+	<WallUtilities.Report.FreeSpace>L'espace devant le chauffage ne doit pas être un mur, une porte ou un autre chauffage.</WallUtilities.Report.FreeSpace>
+	<WallUtilities.Report.Blueprints>Ne peut pas être placé sur un plan.</WallUtilities.Report.Blueprints>
+	<WallUtilities.Report.ByWall>Doit être placé sur un mur.</WallUtilities.Report.ByWall>
+	<WallUtilities.Report.OnFence>Doit être placé sur une clôture.</WallUtilities.Report.OnFence>
+</LanguageData>

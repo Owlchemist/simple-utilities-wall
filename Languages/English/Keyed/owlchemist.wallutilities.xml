@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<WallUtilities.Report.NoRoof>Space in front of heater must be under a roof.</WallUtilities.Report.NoRoof>
+	<WallUtilities.Report.FreeSpace>Space in front of heater must not be a wall, door, or other heater.</WallUtilities.Report.FreeSpace>
+	<WallUtilities.Report.Blueprints>Cannot be placed on blueprints.</WallUtilities.Report.Blueprints>
+	<WallUtilities.Report.ByWall>Must be placed next to wall.</WallUtilities.Report.ByWall>
+	<WallUtilities.Report.OnFence>Must be placed along a fence.</WallUtilities.Report.OnFence>
+</LanguageData>

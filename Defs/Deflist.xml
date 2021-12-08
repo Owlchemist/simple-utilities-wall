@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<CherryPicker.DefList MayRequire="owlchemist.cherrypicker">
+		<defName>FencepostLamps</defName>
+		<label>remove fencepost lamps</label>
+		<defs>
+			<li>ThingDef/Owl_Fencepost_Chemlamp</li>
+			<li>ThingDef/Owl_Fencepost_TorchLamp</li>
+			<li>ThingDef/Owl_Fencepost_Lamp</li>
+		</defs>
+	</CherryPicker.DefList>
+</Defs>

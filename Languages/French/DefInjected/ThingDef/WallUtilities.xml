@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mounted heater -->
+  <Owl_Heater.label>chauffage mural</Owl_Heater.label>
+  <!-- EN: A wall mounted device that converts electricity into heat. It can automatically turn itself on or off to reach a specific target temperature. -->
+  <Owl_Heater.description>Un dispositif mural qui convertit l'électricité en chaleur. S'allume et s'éteind automatiquement en fonction de la température cible.</Owl_Heater.description>
+  
+</LanguageData>

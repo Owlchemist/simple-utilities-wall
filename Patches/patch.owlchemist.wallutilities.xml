@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			<!-- Remove what we're replacing/adding, just to avoid patching errors -->
+			<li Class="PatchOperationRemove">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/*[name()="altitudeLayer" or name()="terrainAffordanceNeeded" or name()="fillPercent" or name()="passability"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]</xpath>
+				<value>
+					<altitudeLayer>BuildingOnTop</altitudeLayer>
+					<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+					<fillPercent>0.15</fillPercent>
+					<passability>PassThroughOnly</passability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Vent"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Building/Misc/TempControl/VentB</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Cooler"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Building/Misc/TempControl/CoolerB</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/placeWorkers</xpath>
+				<value>
+					<li>VanillaFurnitureExpanded.PlaceWorker_OnWall</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/comps</xpath>
+				<value>
+					<li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isEdifice)]</xpath>
+				<value>
+					<isEdifice>false</isEdifice>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isInert)]</xpath>
+				<value>
+					<isInert>true</isInert>
+				</value>
+			</li>
+			<li Class="PatchOperationAttributeAdd">
+				<xpath>/Defs/ThingDef[defName="Heater"]</xpath>
+				<attribute>Name</attribute>
+				<value>HeaterBase</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Fence"]/building/relatedBuildCommands</xpath>
+				<value>
+					<li>Owl_Fencepost_Chemlamp</li>
+					<li>Owl_Fencepost_TorchLamp</li>
+					<li>Owl_Fencepost_Lamp</li>
+				</value>
+			</li>
+			<!-- Rebalance: reduce cost by 5 to account for not being a wall replacement anymore -->
+			<li Class="PatchOperationReplace">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent"]/costList/Steel</xpath>
+				<value>
+					<Steel>25</Steel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Cooler"]/costList/Steel</xpath>
+				<value>
+					<Steel>85</Steel>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

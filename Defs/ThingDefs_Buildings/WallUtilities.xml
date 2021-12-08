@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="HeaterBase">
+		<defName>Owl_Heater</defName>
+		<label>mounted heater</label>
+		<description>A wall mounted device that converts electricity into heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/TempControl/WallHeater</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,2)</drawSize>
+			<shadowData />
+			<damageData />
+		</graphicData>
+		<uiIconScale>1.9</uiIconScale>
+		<uiIconOffset>(0,0.2)</uiIconOffset>
+		<minifiedDef />
+		<thingCategories Inherit="False" />
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>Standable</passability>
+		<pathCost>0</pathCost>
+		<blockWind>false</blockWind>
+		<rotatable>true</rotatable>
+		<fillPercent>0</fillPercent>
+		<size>(1,2)</size>
+		<clearBuildingArea>false</clearBuildingArea>
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		<placeWorkers>
+			<li>WallUtilities.PlaceWorker_OnlyNextToWall</li>
+		</placeWorkers>
+		<costList Inherit="False">
+			<Steel>40</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps Inherit="False">
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>130</basePowerConsumption>
+				<shortCircuitInRain>true</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>16</energyPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2</glowRadius>
+				<glowColor>(255,150,100,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
+		</comps>
+	</ThingDef>
+</Defs>

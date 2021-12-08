@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: fencepost chemlamp -->
+  <Owl_Fencepost_Chemlamp.label>Lampe de clôture à chemfuel</Owl_Fencepost_Chemlamp.label>
+  <!-- EN: A lamp fueled by chemfuel. Can be safely placed outside. -->
+  <Owl_Fencepost_Chemlamp.description>Une lampe qui fonctionne au chemfuel. Peut être placée à l'extérieur sur une clôture.</Owl_Fencepost_Chemlamp.description>
+  
+  <!-- EN: fencepost lamp -->
+  <Owl_Fencepost_Lamp.label>Lampe de clôture</Owl_Fencepost_Lamp.label>
+  <!-- EN: An electrical standing lamp that lights an area. People need light to move and work at full speed. -->
+  <Owl_Fencepost_Lamp.description>Une lampe électrique. Les gens ont besoin de lumière pour se déplacer et travailler à pleine vitesse.</Owl_Fencepost_Lamp.description>
+  
+  <!-- EN: fencepost torch -->
+  <Owl_Fencepost_TorchLamp.label>torche de clôture</Owl_Fencepost_TorchLamp.label>
+  <!-- EN: A wooden torch for lighting an area. People need light to move and work at full speed. Can be automatically refueled with wood. Produces a small amount of heat. -->
+  <Owl_Fencepost_TorchLamp.description>Une torche en bois. Les gens ont besoin de lumière pour se déplacer et travailler à pleine vitesse. Peut être automatiquement réapprovisionnée en bois. Produit un peu de chaleur.</Owl_Fencepost_TorchLamp.description>
+  
+</LanguageData>
