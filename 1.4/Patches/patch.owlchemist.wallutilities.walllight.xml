@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- Add wall lights if there are none -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName="VFEA_WallLamp" or defName="Lighting_MURWallLight"]</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs</xpath>
+				<value>
+					<ThingDef ParentName="LampBase">
+						<defName>Owl_WallLight</defName>
+						<label>wall light</label>
+						<uiIconPath>Things/Building/Owl_WallLight_UI</uiIconPath>
+						<description>A wall-mounted light fixture.</description>
+						<graphicData>
+							<texPath>Things/Building/Owl_WallLight</texPath>
+							<graphicClass>Graphic_Multi</graphicClass>
+						</graphicData>
+						<tickerType>Normal</tickerType>
+						<altitudeLayer>Item</altitudeLayer>
+						<statBases>
+							<MaxHitPoints>25</MaxHitPoints>
+							<WorkToBuild>250</WorkToBuild>
+							<Flammability>1.0</Flammability>
+							<Mass>2</Mass>
+						</statBases>
+						<placeWorkers>
+							<li>VanillaFurnitureExpanded.PlaceWorker_OnWall</li>
+						</placeWorkers>
+						<costList>
+							<Steel>12</Steel>
+						</costList>
+						<building>
+							<isEdifice>false</isEdifice>
+							<canPlaceOverWall>true</canPlaceOverWall>
+						</building>
+						<designationCategory>Furniture</designationCategory>
+						<rotatable>true</rotatable>
+						<tradeability>None</tradeability>
+						<isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+						<clearBuildingArea>false</clearBuildingArea>
+						<defaultPlacingRot>South</defaultPlacingRot>
+						<comps>
+							<li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+								<randomGraphics>
+									<li>Things/Building/Owl_WallLight</li>
+									<li>Things/Building/Owl_WallLight2</li>
+								</randomGraphics>
+							</li>
+							<li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
+							<li Class="CompProperties_Power">
+								<compClass>CompPowerTrader</compClass>
+								<basePowerConsumption>23</basePowerConsumption>
+								<powerUpgrades>
+									<li>
+										<researchProject>ColoredLights</researchProject>
+										<factor>0.5</factor>
+									</li>
+								</powerUpgrades>
+							</li>
+							<li Class="VanillaFurnitureExpanded.CompProperties_GlowerExtended">
+								<spawnGlowerInFacedCell>true</spawnGlowerInFacedCell>
+								<colorOptions>
+									<li>
+										<glowRadius>9</glowRadius>
+										<glowColor>(214,148,94,0)</glowColor>
+									</li>
+								</colorOptions>
+							</li>
+						</comps>
+					</ThingDef>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

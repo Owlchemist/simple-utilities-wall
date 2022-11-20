@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef ParentName="HeaterBase">
 		<defName>Owl_Heater</defName>
-		<label>wall mounted heater</label>
+		<label>mounted heater</label>
 		<description>A wall mounted device that converts electricity into heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/TempControl/WallHeater</texPath>
@@ -11,6 +11,8 @@
 			<shadowData />
 			<damageData />
 		</graphicData>
+		<uiIconScale>1.9</uiIconScale>
+		<uiIconOffset>(0,0.2)</uiIconOffset>
 		<minifiedDef />
 		<thingCategories Inherit="False" />
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
@@ -25,7 +27,7 @@
 			<isEdifice>false</isEdifice>
 		</building>
 		<placeWorkers>
-			<li>WallUtilities.WorkPlace_OnlyNextToWall</li>
+			<li>WallUtilities.PlaceWorker_OnlyNextToWall</li>
 		</placeWorkers>
 		<costList Inherit="False">
 			<Steel>40</Steel>

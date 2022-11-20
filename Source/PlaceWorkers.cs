@@ -20,16 +20,10 @@ namespace WallUtilities
 			if (map.thingGrid.ThingAt<Blueprint>(loc) != null) return new AcceptanceReport("WallUtilities.Report.Blueprints".Translate());
 			
 			//Determine other cell coords
-			//Try to determine if this is a wall. There isn't a wall type so we check for some assumed values.
-			foreach (Thing thinghere in map.thingGrid.ThingsListAtFast(loc + IntVec3.North.RotatedBy(rot)))
-			{
-				string type = thinghere?.def.thingClass.Name;
-				if
-				(
-					(type == nameof(Building) || type == nameof(Mineable) || type == "GL_Building") &&
-				 	(thinghere.def.fillPercent == 1f || thinghere.def.passability == Traversability.Impassable || thinghere.def.blockLight == true)
-				) return true;
-			}
+			//Try to determine if this is a wall. We used to do this by assuming wall-like properties but it didn't play well with custom classes.
+			//So now we use VE Framework's way about trying to determine this.
+			var edifice = (loc + IntVec3.North.RotatedBy(rot)).GetEdifice(map);
+			if (edifice != null && ((edifice?.def.defName.ToLower().Contains("wall") ?? false) || edifice.def.IsSmoothed)) return true;
 
 			return new AcceptanceReport("WallUtilities.Report.ByWall".Translate());
 		}
