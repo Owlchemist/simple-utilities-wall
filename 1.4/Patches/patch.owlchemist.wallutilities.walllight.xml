@@ -50,6 +50,8 @@
 									<li>Things/Building/Owl_WallLight</li>
 									<li>Things/Building/Owl_WallLight2</li>
 								</randomGraphics>
+								<startAsRandom>false</startAsRandom>
+								<disableRandomButton>true</disableRandomButton>
 							</li>
 							<li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
 							<li Class="CompProperties_Power">

@@ -44,12 +44,14 @@
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
+				<success>Always</success>
 				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isEdifice)]</xpath>
 				<value>
 					<isEdifice>false</isEdifice>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
+				<success>Always</success>
 				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isInert)]</xpath>
 				<value>
 					<isInert>true</isInert>
