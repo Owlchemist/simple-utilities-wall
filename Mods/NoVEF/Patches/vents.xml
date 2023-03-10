@@ -1,0 +1,80 @@
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- Remove what we're replacing/adding, just to avoid patching errors -->
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/*[name()="altitudeLayer" or name()="terrainAffordanceNeeded" or name()="fillPercent" or name()="passability"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]</xpath>
+				<value>
+					<altitudeLayer>BuildingOnTop</altitudeLayer>
+					<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+					<fillPercent>0.15</fillPercent>
+					<passability>PassThroughOnly</passability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Vent"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Building/Misc/TempControl/VentB</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Cooler"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Building/Misc/TempControl/CoolerB</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/placeWorkers</xpath>
+				<value>
+					<li>WallUtilities.PlaceWorker_OnlyOnWall</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]</xpath>
+				<value>
+					<li Class="WallUtilities.WallMountable" />
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isEdifice)]</xpath>
+				<value>
+					<isEdifice>false</isEdifice>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent" or defName="Cooler"]/building[not(isInert)]</xpath>
+				<value>
+					<isInert>true</isInert>
+				</value>
+			</li>
+			<!-- Rebalance: reduce cost by 5 to account for not being a wall replacement anymore -->
+			<li Class="PatchOperationReplace">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Vent"]/costList/Steel</xpath>
+				<value>
+					<Steel>25</Steel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<success>Always</success>
+				<xpath>/Defs/ThingDef[defName="Cooler"]/costList/Steel</xpath>
+				<value>
+					<Steel>85</Steel>
+				</value>
+			</li>
+			<!-- Replace stuff patch -->
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>Defs/ThingDef[defName="Cooler_Over2W"]</xpath>
+				<value>
+					<placeWorkers Inherit="False" />
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

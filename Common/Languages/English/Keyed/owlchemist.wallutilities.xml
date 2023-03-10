@@ -5,4 +5,5 @@
 	<WallUtilities.Report.Blueprints>Cannot be placed on blueprints.</WallUtilities.Report.Blueprints>
 	<WallUtilities.Report.ByWall>Must be placed next to wall.</WallUtilities.Report.ByWall>
 	<WallUtilities.Report.OnFence>Must be placed along a fence.</WallUtilities.Report.OnFence>
+	<WallUtilities.Report.OnWall>Must be placed on a wall and facing a clear space.</WallUtilities.Report.OnWall>
 </LanguageData>

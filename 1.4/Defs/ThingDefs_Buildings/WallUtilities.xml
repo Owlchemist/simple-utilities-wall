@@ -48,7 +48,74 @@
 				<glowColor>(255,150,100,0)</glowColor>
 			</li>
 			<li Class="CompProperties_Breakdownable"/>
-			<li Class="VanillaFurnitureExpanded.CompProperties_MountableOnWall"/>
 		</comps>
+		<modExtensions>
+			<li Class="WallUtilities.WallMountable" />
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="LampBase">
+		<defName>Owl_WallLight</defName>
+		<label>wall light</label>
+		<uiIconPath>Things/Building/Owl_WallLight_UI</uiIconPath>
+		<description>A wall-mounted light fixture.</description>
+		<graphicData>
+			<texPath>Things/Building/Owl_WallLight</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Item</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>25</MaxHitPoints>
+			<WorkToBuild>250</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Mass>2</Mass>
+		</statBases>
+		<placeWorkers>
+			<li>WallUtilities.PlaceWorker_OnlyOnWall</li>
+		</placeWorkers>
+		<costList>
+			<Steel>12</Steel>
+		</costList>
+		<building>
+			<isEdifice>false</isEdifice>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<designationCategory>Furniture</designationCategory>
+		<rotatable>true</rotatable>
+		<tradeability>None</tradeability>
+		<isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+		<clearBuildingArea>false</clearBuildingArea>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+				<randomGraphics>
+					<li>Things/Building/Owl_WallLight</li>
+					<li>Things/Building/Owl_WallLight2</li>
+				</randomGraphics>
+				<startAsRandom>false</startAsRandom>
+				<disableRandomButton>true</disableRandomButton>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>23</basePowerConsumption>
+				<powerUpgrades>
+					<li>
+						<researchProject>ColoredLights</researchProject>
+						<factor>0.5</factor>
+					</li>
+				</powerUpgrades>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>9</glowRadius>
+				<glowColor>(214,148,94,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="WallUtilities.WallMountable" />
+			<li Class="WallUtilities.WallMountedGlower" />
+		</modExtensions>
 	</ThingDef>
 </Defs>

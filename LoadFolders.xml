@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<loadFolders>
+	<v1.3>
+		<li>1.3</li>
+		<li>Common</li>
+		<li IfModActive="oskarpotocki.vanillafactionsexpanded.core">1.3/VEF</li>
+	</v1.3>
+	<v1.4>
+		<li>1.4</li>
+		<li>Common</li>
+		<li IfModActive="oskarpotocki.vanillafactionsexpanded.core">Mods/VEF</li>
+		<li IfModNotActive="oskarpotocki.vanillafactionsexpanded.core">Mods/NoVEF</li>
+	</v1.4>
+</loadFolders>
