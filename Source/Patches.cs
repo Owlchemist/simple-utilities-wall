@@ -12,15 +12,43 @@ namespace WallUtilities
 	{
 		public static void Prefix(Building __instance)
 		{
-			if (__instance.def == null || __instance.def.passability != Traversability.Impassable || __instance.def.HasModExtension<WallMountable>()) return; //Avoid recursive loop
+			var def = __instance.def;
+			if (def == null) return;
+
 			Map map = __instance.Map;
 			if (map == null) return;
 
-			var things = map.thingGrid.ThingsListAtFast(__instance.Position);
-			for (int i = things.Count; i-- > 0;)
+			if (def.building?.isFence ?? false) CheckFence();
+			else CheckWall();
+
+			//Embedded methods
+			void CheckFence()
 			{
-				var thing = things[i];
-				if (thing.def.HasModExtension<WallMountable>()) thing.Destroy();
+				var things = map.thingGrid.ThingsListAtFast(__instance.Position);
+				for (int i = things.Count; i-- > 0;)
+				{
+					var thing = things[i];
+					if (thing.def.placeWorkers?.Contains(typeof(PlaceWorker_OnlyOnFence)) ?? false )
+					{
+						thing.Destroy();
+						return;
+					}
+				}	
+			}
+			void CheckWall()
+			{
+				if (def.passability != Traversability.Impassable || def.HasModExtension<WallMountable>()) return; //Avoid recursive loop
+			
+				var things = map.thingGrid.ThingsListAtFast(__instance.Position);
+				for (int i = things.Count; i-- > 0;)
+				{
+					var thing = things[i];
+					if (thing.def.HasModExtension<WallMountable>())
+					{
+						thing.Destroy();
+						return;
+					}
+				}
 			}
 		}
 	}

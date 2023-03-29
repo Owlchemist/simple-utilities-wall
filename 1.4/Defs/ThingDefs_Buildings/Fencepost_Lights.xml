@@ -27,7 +27,6 @@
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<tickerType>Normal</tickerType>
-		<drawerType>RealtimeOnly</drawerType>
 		<fillPercent>0</fillPercent>
 	</ThingDef>
 	
@@ -39,6 +38,7 @@
 			<texPath>Things/Building/FencepostTorch</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<drawerType>RealtimeOnly</drawerType>
 		<uiIconPath>Things/Building/Misc/TorchLamp_MenuIcon</uiIconPath>
 		<uiIconScale>0.9</uiIconScale>
 		<rotatable>false</rotatable>
